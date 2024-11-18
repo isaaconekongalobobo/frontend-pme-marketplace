@@ -21,7 +21,8 @@ export default {
       'main-yellow': '#EEB740',
       'black': '#000000',
       'white': '#ffffff',
-      'black-marroon' : '#2B2A28'
+      'black-marroon' : '#2B2A28',
+      'gray': '#D9D9D9'
     }
   },
   plugins: [
