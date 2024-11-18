@@ -1,5 +1,6 @@
 import Header from "../../components/header/header"
 import SearchBar from "./components/searchBar"
+import SectionCategorie from "./components/sectionCategorie"
 import SubmitButton from "./components/submitButton"
 
 const HomePage = () => {
@@ -10,6 +11,7 @@ const HomePage = () => {
                 <SearchBar/>
                 <SubmitButton/>
             </form>
+            <SectionCategorie/>
         </>
     )
 }
