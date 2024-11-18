@@ -1,7 +1,9 @@
+import Header from "../../components/header/header"
+
 const SuccessStorie = () => {
     return (
         <>
-            <h1>Successs Storie</h1>
+            <Header/>
         </>
     )
 }

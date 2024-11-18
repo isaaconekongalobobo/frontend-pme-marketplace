@@ -5,7 +5,7 @@ const HomePage = () => {
     return (
         <>
             <Header/>
-            <div className="flex justify-center relative top-[-11rem]  ">
+            <div className="flex justify-center relative top-[-11rem] ">
                 <SearchBar/>
             </div>
         </>
