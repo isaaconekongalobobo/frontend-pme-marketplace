@@ -1,6 +1,10 @@
+import { Link } from "react-router-dom"
+
 const Favicon = () => {
     return (
-        <img src="./mosala.png" alt="" className="~w-6/8" />
+        <Link to="/">
+            <img src="./mosala.png" alt="" className="~w-6/8" />
+        </Link>
     )
 }
 export default Favicon
