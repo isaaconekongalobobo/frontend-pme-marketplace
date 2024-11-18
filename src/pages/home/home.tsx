@@ -1,13 +1,15 @@
 import Header from "../../components/header/header"
 import SearchBar from "./components/searchBar"
+import SubmitButton from "./components/submitButton"
 
 const HomePage = () => {
     return (
         <>
             <Header/>
-            <div className="flex justify-center relative top-[-11rem] ">
+            <form className="flex justify-center items-center relative top-[-11rem] ">
                 <SearchBar/>
-            </div>
+                <SubmitButton/>
+            </form>
         </>
     )
 }

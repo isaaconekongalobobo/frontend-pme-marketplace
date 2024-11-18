@@ -22,7 +22,8 @@ export default {
       'black': '#000000',
       'white': '#ffffff',
       'black-marroon' : '#2B2A28',
-      'gray': '#D9D9D9'
+      'gray': '#D9D9D9',
+      'transparant': 'transparent'
     }
   },
   plugins: [
