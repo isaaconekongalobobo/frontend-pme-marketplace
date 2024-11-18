@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 export interface ItemOngletType {
     to: string,
     text: string
@@ -6,9 +6,9 @@ export interface ItemOngletType {
 const ItemOnglet = ({to, text}:ItemOngletType) => {
     return (
         <div>
-            <Link to={to}>
+            <NavLink to={to}>
                 <span className="text-black">{text}</span>
-            </Link>
+            </NavLink>
         </div>
     );
 }

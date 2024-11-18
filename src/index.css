@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Class active pour l'onglet en cours */
+.active span {
+  text-decoration: underline;
+  text-decoration-color: #EEB740; /* Couleur de l'underline */
+  text-underline-offset: 4px; /* Espacement entre le texte et l'underline */
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

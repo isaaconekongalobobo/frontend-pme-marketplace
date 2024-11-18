@@ -1,6 +1,18 @@
+import {motion} from 'framer-motion'
+const btnVariant = {
+    whenHover: {
+        y: -2,
+    }
+}
 const BtnConnexion = () => {
     return (
-        <button className="bg-main-yellow font-normal rounded-full hidden sm:block">Connexion | Inscription</button>
+        <motion.button 
+            className="bg-main-yellow hover:bg-black-marroon font-normal rounded-full hidden sm:block"
+            variants={btnVariant}
+            whileHover="whenHover"
+        >
+            Connexion | Inscription
+        </motion.button>
     )
 }
 export default BtnConnexion

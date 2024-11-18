@@ -20,7 +20,8 @@ export default {
     colors: {
       'main-yellow': '#EEB740',
       'black': '#000000',
-      'white': '#ffffff'
+      'white': '#ffffff',
+      'black-marroon' : '#2B2A28'
     }
   },
   plugins: [
