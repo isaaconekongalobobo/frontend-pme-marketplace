@@ -1,4 +1,5 @@
 import BtnConnexion from "./components/btnConnexion"
+import BurgerButton from "./components/burgerButton"
 import Favicon from "./components/favicon"
 import Onglets from "./components/onglets"
 
@@ -10,7 +11,9 @@ const Header = () => {
                 <Onglets/>
                 <BtnConnexion/>
            </div>
-           
+           <div className=" sm:hidden ">
+                <BurgerButton/>
+           </div>
         </nav>
     )
 }
