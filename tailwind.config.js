@@ -18,7 +18,9 @@ export default {
       }
     },
     colors: {
-      'main-yellow': '#EEB740'
+      'main-yellow': '#EEB740',
+      'black': '#000000',
+      'white': '#ffffff'
     }
   },
   plugins: [
