@@ -17,7 +17,7 @@ const Header = () => {
            <div className=" sm:hidden ">
                 <BurgerButton sideBar={sideBar} setSideBar={setSideBar} />
            </div>
-           { sideBar && <SideBar userName="" userAvatar="" /> }
+           { sideBar && <SideBar userName="" userAvatar="" setSideBar={setSideBar} /> }
         </nav>
     )
 }
