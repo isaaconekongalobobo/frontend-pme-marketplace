@@ -1,4 +1,5 @@
 import {motion} from 'framer-motion'
+import IconUser from './iconUser'
 const btnVariant = {
     whenHover: {
         y: -2,
@@ -7,11 +8,12 @@ const btnVariant = {
 const BtnConnexion = () => {
     return (
         <motion.button 
-            className="bg-main-yellow hover:bg-black-marroon font-normal rounded-full hidden sm:block"
-            variants={btnVariant}
-            whileHover="whenHover"
+            className = " hidden sm:flex items-center gap-2 bg-main-yellow hover:bg-black-marroon font-normal rounded-full"
+            variants = {btnVariant}
+            whileHover = "whenHover"
         >
-            Connexion | Inscription
+            <span>Connexion | Inscription </span>
+            <IconUser/>
         </motion.button>
     )
 }
