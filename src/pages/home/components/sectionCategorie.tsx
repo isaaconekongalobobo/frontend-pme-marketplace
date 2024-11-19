@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 const icons = [
     {
         categorie: 'Agriculture',
-        icon : <PiFarm/>
+        icon : <PiFarm className="size-9 hover:bg-main-yellow p-1" />
     },    
     {
         categorie: 'Beaute et Cosmetique',
@@ -60,7 +60,7 @@ const icons = [
 
 const SectionCategorie = () => {
     return (
-        <div className="flex ">
+        <div className="flex justify-center relative top-[-9rem] gap-8 ">
             {
                 icons.map ((icon, index) => (
                     <Link to={''} key={index}>
