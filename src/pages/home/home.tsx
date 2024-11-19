@@ -6,6 +6,7 @@ import SubmitButton from "./components/submitButton"
 import { useEffect, useState } from "react"
 import axios from "axios"
 import CardPme from "./components/cardPme/cardPme"
+import Footer from "../../components/footer/footer"
 
 export interface PmeType {
     idPme: number,
@@ -80,7 +81,90 @@ const pmeData = [
       licence: "Licence E",
       logoType: "https://res.cloudinary.com/do2qnb4zc/image/upload/v1731165922/love-again_kx8bkd.png",
       validated: false
-    }
+    },
+    {
+        idPme: 2,
+        nom: "EcoServices",
+        physicAdress: "45 Avenue Verte, Lyon, France",
+        emailAdress: "info@ecoservices.fr",
+        identificationNumber: "FR987654321",
+        description: "Services écologiques pour une ville plus verte.",
+        communicationMode: ["Email", "Chat en ligne"],
+        licence: "Licence B",
+        logoType: "https://res.cloudinary.com/do2qnb4zc/image/upload/v1731165922/love-again_kx8bkd.png",
+        validated: false
+      },
+      {
+        idPme: 3,
+        nom: "Creative Solutions",
+        physicAdress: "78 Boulevard des Arts, Marseille, France",
+        emailAdress: "contact@creativesolutions.com",
+        identificationNumber: "",
+        description: "",
+        communicationMode: ["Email", "Rencontre en personne"],
+        licence: "Licence C",
+        logoType: "https://res.cloudinary.com/do2qnb4zc/image/upload/v1731165922/love-again_kx8bkd.png",
+        validated: true
+      },
+      {
+        idPme: 4,
+        nom: "GreenTech",
+        physicAdress: "22 Rue des Innovateurs, Bordeaux, France",
+        emailAdress: "support@greentech.com",
+        identificationNumber: "FR1122334455",
+        description: "Technologies vertes pour un avenir durable.",
+        communicationMode: ["Email", "Téléphone"],
+        licence: "Licence D",
+        logoType: "https://res.cloudinary.com/do2qnb4zc/image/upload/v1731165922/love-again_kx8bkd.png",
+        validated: true
+      },    {
+        idPme: 2,
+        nom: "EcoServices",
+        physicAdress: "45 Avenue Verte, Lyon, France",
+        emailAdress: "info@ecoservices.fr",
+        identificationNumber: "FR987654321",
+        description: "Services écologiques pour une ville plus verte.",
+        communicationMode: ["Email", "Chat en ligne"],
+        licence: "Licence B",
+        logoType: "https://res.cloudinary.com/do2qnb4zc/image/upload/v1731165922/love-again_kx8bkd.png",
+        validated: false
+      },
+      {
+        idPme: 3,
+        nom: "Creative Solutions",
+        physicAdress: "78 Boulevard des Arts, Marseille, France",
+        emailAdress: "contact@creativesolutions.com",
+        identificationNumber: "",
+        description: "",
+        communicationMode: ["Email", "Rencontre en personne"],
+        licence: "Licence C",
+        logoType: "https://res.cloudinary.com/do2qnb4zc/image/upload/v1731165922/love-again_kx8bkd.png",
+        validated: true
+      },
+      {
+        idPme: 4,
+        nom: "GreenTech",
+        physicAdress: "22 Rue des Innovateurs, Bordeaux, France",
+        emailAdress: "support@greentech.com",
+        identificationNumber: "FR1122334455",
+        description: "Technologies vertes pour un avenir durable.",
+        communicationMode: ["Email", "Téléphone"],
+        licence: "Licence D",
+        logoType: "https://res.cloudinary.com/do2qnb4zc/image/upload/v1731165922/love-again_kx8bkd.png",
+        validated: true
+      },
+      {
+        idPme: 4,
+        nom: "GreenTech",
+        physicAdress: "22 Rue des Innovateurs, Bordeaux, France",
+        emailAdress: "support@greentech.com",
+        identificationNumber: "FR1122334455",
+        description: "Technologies vertes pour un avenir durable.",
+        communicationMode: ["Email", "Téléphone"],
+        licence: "Licence D",
+        logoType: "https://res.cloudinary.com/do2qnb4zc/image/upload/v1731165922/love-again_kx8bkd.png",
+        validated: true
+      },
   ];
   
   // Affichage des données dans la console pour vérification
@@ -117,9 +201,9 @@ const HomePage = () => {
                             pmeData.map (pme => <CardPme image={pme.logoType} name={pme.nom} services={pme.communicationMode} /> )
                         }
                     </section>                
-                </div>                 
+                </div>
+                <Footer/>                 
             </div>
-           
         </div>
     )
 }
