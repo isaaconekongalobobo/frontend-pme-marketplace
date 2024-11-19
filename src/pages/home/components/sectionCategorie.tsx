@@ -13,47 +13,47 @@ import { Link } from "react-router-dom";
 import {motion} from 'framer-motion'
 const icons = [
     {
-        categorie: 'Agriculture',
+        categorie: 'agriculture',
         icon : <PiFarm className="~size-7/9 p-1" />
     },    
     {
-        categorie: 'Beaute et Cosmetique',
+        categorie: 'beaute-Cosmetique',
         icon : <Beauty/>
     },    
     {
-        categorie: 'Himobilier',
+        categorie: 'himobilier',
         icon : <RealEstate/>
     },    
     {
-        categorie: 'Informatique',
+        categorie: 'informatique',
         icon : <Computer/>
     },   
     {
-        categorie: 'Energies',
+        categorie: 'energies',
         icon : <Energy/>
     },    
     {
-        categorie: 'Consulting',
+        categorie: 'consulting',
         icon : <Consulting/>
     },    
     {
-        categorie: 'Voyage',
+        categorie: 'voyage',
         icon : <Travel/>
     },    
     {
-        categorie: 'Hydrocarbure',
+        categorie: 'hydrocarbure',
         icon : <Oil/>
     },    
     {
-        categorie: 'Voitures',
+        categorie: 'voitures',
         icon : <Car/>
     },    
     {
-        categorie: 'Decoration',
+        categorie: 'decoration',
         icon : <Decorate/>
     },    
     {
-        categorie: 'Hotel',
+        categorie: 'hotelerie',
         icon : <Hotel/>
     },
 
@@ -71,8 +71,8 @@ const SectionCategorie = () => {
         <div className="flex justify-center relative top-[-9rem] ~gap-1/8 pl-14 pr-14 ">
             {
                 icons.map ((icon, index) => (
-                    <motion.div variants={iconVariant} whileHover="hover" className="hover:bg-main-yellow rounded-full" >
-                        <Link to={''} key={index}>
+                    <motion.div key={index} variants={iconVariant} whileHover="hover" className="hover:bg-main-yellow rounded-full" >
+                        <Link to={`categorie/${icon.categorie}`} >
                             <motion.span className="text-black" >
                                 {icon.icon}
                             </motion.span>

@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom"
 import Header from "../../components/header/header"
 import SearchBar from "./components/searchBar"
 import SectionCategorie from "./components/sectionCategorie"
@@ -12,6 +13,7 @@ const HomePage = () => {
                 <SubmitButton/>
             </form>
             <SectionCategorie/>
+            <Outlet/>
         </>
     )
 }

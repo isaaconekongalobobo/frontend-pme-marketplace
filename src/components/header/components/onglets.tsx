@@ -8,7 +8,7 @@ const Onglets = () => {
     return (
         <div className="flex ~gap-5/8">
             {
-                tbOnglet.map (item => <ItemOnglet to={item.to} text={item.text} />)
+                tbOnglet.map ((item, index) => <ItemOnglet key={index} to={item.to} text={item.text} />)
             }
         </div>
     );
