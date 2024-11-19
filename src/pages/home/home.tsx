@@ -196,7 +196,7 @@ const HomePage = () => {
                 </div>
                 <div className="relative ~top-20/28 " >
                     <Outlet/>
-                    <section className="grid sm:grid-cols-4 p-14 gap-5">
+                    <section className="grid sm:grid-cols-4 p-10 gap-5">
                         {
                             pmeData.map (pme => <CardPme image={pme.logoType} name={pme.nom} services={pme.communicationMode} /> )
                         }

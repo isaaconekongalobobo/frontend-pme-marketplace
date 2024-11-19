@@ -6,9 +6,13 @@ interface pmeCardType {
 
 const CardPme = ({image, name, services} : pmeCardType) => {
     return (
-        <div>
-            <img src={image} alt={`Profil de ${name}`} />
-            <p> { `${services![1]} +${services?.length}` } </p>
+        <div className=" flex flex-col items-center gap-2 ">
+            <img src={image} alt={`Profil de ${name}`} className="~w-3/4/5/6 rounded-xl " />
+            <div className=" flex flex-col text-center ">
+                <h3 className="text-black font-medium text-xl "> {name} </h3>
+                <p className="text-black" > { `${services![1]} +${services?.length}` } </p>
+            </div>
+            
         </div>
     );
 }
