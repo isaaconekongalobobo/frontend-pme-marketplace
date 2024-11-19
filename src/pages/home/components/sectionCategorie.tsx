@@ -10,10 +10,11 @@ import Car from "./sectionCategoryIcons/car";
 import Decorate from "./sectionCategoryIcons/decorate";
 import Hotel from "./sectionCategoryIcons/hotel";
 import { Link } from "react-router-dom";
+import {motion} from 'framer-motion'
 const icons = [
     {
         categorie: 'Agriculture',
-        icon : <PiFarm className="size-9 hover:bg-main-yellow p-1" />
+        icon : <PiFarm className="size-9 p-1" />
     },    
     {
         categorie: 'Beaute et Cosmetique',
@@ -58,16 +59,26 @@ const icons = [
 
 ]
 
+const iconVariant = {
+    hover: {
+        scale: 1.1,
+        y: -2
+    }
+}
+
 const SectionCategorie = () => {
     return (
         <div className="flex justify-center relative top-[-9rem] gap-8 ">
             {
                 icons.map ((icon, index) => (
-                    <Link to={''} key={index}>
-                        <span className="text-black">
-                            {icon.icon}
-                        </span>
-                    </Link>
+                    <motion.div variants={iconVariant} whileHover="hover" className="hover:bg-main-yellow rounded-full" >
+                        <Link to={''} key={index}>
+                            <motion.span className="text-black" >
+                                {icon.icon}
+                            </motion.span>
+                        </Link>                        
+                    </motion.div>
+
                 ))
             }
         </div>
