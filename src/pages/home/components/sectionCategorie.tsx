@@ -14,7 +14,7 @@ import {motion} from 'framer-motion'
 const icons = [
     {
         categorie: 'Agriculture',
-        icon : <PiFarm className="size-9 p-1" />
+        icon : <PiFarm className="~size-7/9 p-1" />
     },    
     {
         categorie: 'Beaute et Cosmetique',
@@ -68,7 +68,7 @@ const iconVariant = {
 
 const SectionCategorie = () => {
     return (
-        <div className="flex justify-center relative top-[-9rem] gap-8 ">
+        <div className="flex justify-center relative top-[-9rem] ~gap-1/8 pl-14 pr-14 ">
             {
                 icons.map ((icon, index) => (
                     <motion.div variants={iconVariant} whileHover="hover" className="hover:bg-main-yellow rounded-full" >

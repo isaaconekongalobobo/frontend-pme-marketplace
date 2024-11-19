@@ -7,7 +7,7 @@ const HomePage = () => {
     return (
         <>
             <Header/>
-            <form className="flex justify-center items-center relative top-[-11rem] ">
+            <form className="flex justify-center items-center relative top-[-11rem] ~gap-2/1 ">
                 <SearchBar/>
                 <SubmitButton/>
             </form>

@@ -9,10 +9,10 @@ const btnVariant = {
 const SubmitButton = () => {
     return (
         <motion.button 
-            type="submit" className="flex rounded-full size-20 justify-center items-center bg-transparant "
+            type="submit" className="flex rounded-full ~size-5/20 justify-center items-center bg-transparant "
             variants={btnVariant} whileHover="whenHover"
          >
-            <span className=" bg-main-yellow hover:bg-black-marroon rounded-full p-2 border-8 border-white shadow-black-marroon  shadow " >
+            <span className=" bg-main-yellow hover:bg-black-marroon rounded-full ~p-1/2 border-8 border-white shadow-black-marroon  shadow " >
                 <LiaSearchSolid className=" text-2xl" />
             </span>
         </motion.button>
