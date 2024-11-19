@@ -8,7 +8,7 @@ import SideBar from "./components/sideBar"
 const Header = () => {
     const [sideBar, setSideBar] = useState<boolean> (false)
     return (
-        <nav className="flex justify-between items-center ~p-2/4 ~pl-5/12 ~pr-5/12 fixed top-[0.1rem] w-full z-20 shadow-md ">
+        <nav className="flex justify-between items-center ~p-2/4 ~pl-5/12 ~pr-5/12 fixed top-[-5px] w-full z-20 shadow-md bg-white ">
            <Favicon/>
            <div className="hidden sm:flex items-center gap-7">
                 <Onglets/>
