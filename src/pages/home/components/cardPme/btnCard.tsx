@@ -24,7 +24,7 @@ const BtnCard = ({idPme}:{idPme: number}) => {
     return (
         <Link to={`/pme-details/${idPme}`} >
             <motion.button variants={btnVariant} initial="initial" animate="animate" whileHover="hover"
-                className="relative bottom-[7rem] left-[10rem] rounded-full size-[5rem] flex justify-center
+                className="relative bottom-[7rem] ~left-[9rem]/[10rem] rounded-full size-[5rem] flex justify-center
                 bg-black-marroon  border-white  hover:border-main-yellow border-4 shadow-xl "
             >
                 <CgPlayListAdd 
