@@ -13,7 +13,7 @@ const iconVariant = {
         transition: {
             delay: 0.1
         }
-    }
+    },
 }
 
 const BtnSubmition = () => {
@@ -21,12 +21,12 @@ const BtnSubmition = () => {
     const show = () => setIcon (true)
     const hidde = () => setIcon (false)
     return (
-        <button type="submit" className="rounded-full w-3/4 flex items-center justify-center"
+        <motion.button whileHover={{y: -2}} type="submit" className="rounded-full w-3/4 flex items-center justify-center"
          onMouseOver={show} onMouseLeave={hidde}>Se connecter
             <motion.span variants={iconVariant} initial="initial" whileInView="animate" className={icon? "block" : "hidden"}>
                 <BiArrowFromLeft className="relative left-3 text-2xl"/>
             </motion.span>
-        </button>
+        </motion.button>
     );
 }
 

@@ -3,10 +3,24 @@ import Input from './components/input';
 import Header from './components/header';
 import BtnSubmition from './components/btnSubmition';
 import { Link } from 'react-router-dom';
+
+const formVariant = {
+    initial : {
+        y: -20,
+        opacity: 0,
+    },
+    animate: {
+        y:0,
+        opacity: 1,
+        transition: {
+            delay: 1
+        }
+    }
+}
 const Connexion = () => {
     return (
-        <main className='flex justify-center items-center p-8 w-screen bg-breaked-white h-screen '>
-            <motion.form className='bg-white p-9 pl-8 pr-8 shadow-lg rounded-2xl flex flex-col gap-5'>
+        <main className='flex justify-center items-center p-8 w-screen bg-breaked-white h-screen'>
+            <motion.form className='bg-white p-9 pl-8 pr-8 shadow-lg rounded-2xl flex flex-col gap-5' variants={formVariant} initial="initial" animate="animate" >
                 {/* En tete */}
                 <Header/>
 
