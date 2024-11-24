@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Onglets from "./components/onglets";
+import Categories from "./components/categories";
 
 const Footer = () => {
     return (
@@ -13,6 +14,9 @@ const Footer = () => {
 
             {/* Onglets */}
             <Onglets/>
+
+            {/* Categories */}
+            <Categories/>
             
         </footer>
     );
