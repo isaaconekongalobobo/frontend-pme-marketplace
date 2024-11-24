@@ -4,6 +4,7 @@ import SuccessStorie from "./pages/success-storie/successStorie"
 import DashboardPme from "./pages/dashboard-pme/dashboardPme"
 import PmeDetails from "./pages/pme-details/pmeDetails"
 import ResultatCategorie from "./pages/home/components/resultatCategorie"
+import Connexion from "./pages/connexion/connexion"
 
 const routes = createBrowserRouter ([
   {
@@ -28,6 +29,10 @@ const routes = createBrowserRouter ([
     element: <PmeDetails/>,
     children: []
   },
+  {
+    path: '/connexion',
+    element: <Connexion/>
+  }
 ]) 
 function App() {
   return <RouterProvider router={routes}/>
