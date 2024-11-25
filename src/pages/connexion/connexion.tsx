@@ -31,7 +31,7 @@ const Connexion = () => {
 
                 <div className='flex flex-col gap-2 items-center' >
                     <BtnSubmition/>
-                    <Link to="/inscription-step-1">
+                    <Link to="/inscription/inscription-step-1">
                         <span className='text-black-marroon hover:underline hover:underline-offset-4'>Je n'aie pas un compte</span>
                     </Link>
                 </div>

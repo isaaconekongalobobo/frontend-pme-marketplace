@@ -5,6 +5,10 @@ import DashboardPme from "./pages/dashboard-pme/dashboardPme"
 import PmeDetails from "./pages/pme-details/pmeDetails"
 import ResultatCategorie from "./pages/home/components/resultatCategorie"
 import Connexion from "./pages/connexion/connexion"
+import Inscription from "./pages/inscription/inscription"
+import Step1 from "./pages/inscription/step-1/step1"
+import Step2 from "./pages/inscription/step-2/step2"
+import Step3 from "./pages/inscription/step-3/step3"
 
 const routes = createBrowserRouter ([
   {
@@ -32,6 +36,15 @@ const routes = createBrowserRouter ([
   {
     path: '/connexion',
     element: <Connexion/>
+  },
+  {
+    path: '/inscription',
+    element: <Inscription/>,
+    children: [
+      { path: 'inscription-step-1', element: <Step1/> },
+      { path: 'inscription-step-2', element: <Step2/> },
+      {path: 'inscription-step-2', element: <Step3/>}
+    ]
   }
 ]) 
 function App() {
