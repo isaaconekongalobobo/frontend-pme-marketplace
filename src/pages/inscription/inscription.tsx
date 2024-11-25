@@ -1,8 +1,8 @@
+import { Outlet } from "react-router-dom";
+
 const Inscription = () => {
     return (
-        <div>
-            
-        </div>
+        <Outlet></Outlet>
     );
 }
 
