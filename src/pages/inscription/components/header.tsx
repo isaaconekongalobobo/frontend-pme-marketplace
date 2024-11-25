@@ -10,7 +10,7 @@ const headerVariant = {
         opacity: 1,
         scale: 1,
         transition: {
-            delay: 1.5
+            delay: 0.5
         }
     }
 }

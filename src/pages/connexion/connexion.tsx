@@ -22,7 +22,7 @@ const Connexion = () => {
         <main className='flex justify-center items-center p-8 w-screen bg-breaked-white h-screen'>
             <motion.form className='bg-white p-9 pl-8 pr-8 shadow-lg rounded-2xl flex flex-col gap-5' variants={formVariant} initial="initial" animate="animate" >
                 {/* En tete */}
-                <Header/>
+                <Header title='Connectez-vous a votre compte' />
 
                 <div className='flex flex-col gap-2'>
                     <Input type='text' name='email' placeholder='E-mail'/>
