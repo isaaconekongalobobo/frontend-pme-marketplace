@@ -175,7 +175,7 @@ const HomePage = () => {
     const [allPme, setAllPme] = useState<PmeType[]> ([])
     useEffect (() => {
         try {
-            axios.get ('')
+            axios.get ('http://localhost:3333/get-all-pmes')
             .then ((response) => {
                 setAllPme (response.data)
             })
@@ -198,7 +198,7 @@ const HomePage = () => {
                     <Outlet/>
                     <section className="grid sm:grid-cols-4 ~p-14/16 gap-14 mt-2 mb-28 ">
                         {
-                            pmeData.map (pme => <CardPme idPme={pme.idPme} image={pme.logoType} name={pme.nom} services={pme.communicationMode} /> )
+                            allPme.map (pme => <CardPme idPme={pme.idPme} image={pme.logoType} name={pme.nom} services={pme.communicationMode} /> )
                         }
                     </section>                
                 </div>
