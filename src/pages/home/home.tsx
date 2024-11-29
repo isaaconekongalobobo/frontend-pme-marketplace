@@ -30,7 +30,7 @@ const HomePage = () => {
                     </form>
                     <SectionCategorie/>                
                 </div>
-                <div className="relative ~top-20/28 " >
+                <div className="relative ~top-20/28 z-10" >
                     <Outlet/>               
                 </div>
                 <Footer/>                 
