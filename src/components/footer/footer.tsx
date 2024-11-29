@@ -5,7 +5,7 @@ import Line from "./components/line";
 
 const Footer = () => {
     return (
-        <footer className="bg-black-marroon relative top-10 p-8 flex flex-col gap-12 " >
+        <footer className="bg-black-marroon relative bottom-[-17rem] p-8 flex flex-col gap-12 " >
             <div className="flex flex-col sm:flex-row gap-5 sm:gap-44">
                 <div className="sm:w-1/4 flex flex-col gap-2 items-center sm:items-start ">
                     <Link to="/">
