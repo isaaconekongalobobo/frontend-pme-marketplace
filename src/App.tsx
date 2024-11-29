@@ -21,7 +21,7 @@ const routes = createBrowserRouter ([
       element: <HomePage/>,
       children: [
         {path: 'categorie', element: <AllCategories/> },
-        { path:'categorie/:nom', element: <ResultatCategorie/> }
+        { path:'categorie/:categorie', element: <ResultatCategorie/> }
       ]
   },
   {
