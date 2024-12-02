@@ -1,4 +1,4 @@
-const CoverImage = ({src}:{src: string}) => {
+const CoverImage = ({src}:{src: string | undefined}) => {
     return (
         <img src={src} alt="Photo de couverture" />
     );
