@@ -5,7 +5,6 @@ import Header from "../../components/header/header"
 import { useEffect, useState } from "react"
 import { PmeType } from "../home/home"
 import axios from "axios"
-import CoverImage from "./components/header/coverImage"
 import ProfileImage from "./components/header/profileImage"
 
 const PmeDetails = () => {
@@ -30,10 +29,9 @@ const PmeDetails = () => {
     return (
         <div>
             <Header/>
-                <div>
-                    <div>
-                        <CoverImage src={pme?.cover} />
-                        <ProfileImage src={pme?.profile} />
+                <div className="relative">
+                    <div className={`bg-[url('${pme?.profile}')] bg-cover bg-center w-full ~h-40/64 p-8 `}>
+                        <ProfileImage src={pme?.cover} />
                     </div>
                 </div>
             <Footer/>

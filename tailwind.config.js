@@ -25,6 +25,7 @@ export default {
       'black-marroon' : '#2B2A28',
       'gray': '#D9D9D9',
       'transparant': 'transparent',
+      'baige': '#DCCEB2',
     }
   },
   plugins: [
