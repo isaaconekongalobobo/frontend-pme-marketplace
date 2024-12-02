@@ -8,13 +8,15 @@ import Footer from "../../components/footer/footer"
 export interface PmeType {
     idPme: number,
     nom: string,
-    physicAdress: string,
-    emailAdress: string,
+    adress: string,
+    email: string,
     identificationNumber: string | '',
     description: string | '',
     communicationMode: string[],
     licence: string,
     logoType: string,
+    profile: string,
+    cover:string,
     validated: boolean
 }
 

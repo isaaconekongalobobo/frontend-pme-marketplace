@@ -12,6 +12,8 @@ const AllCategories = () => {
             axios.get ('http://localhost:3333/get-all-pmes')
             .then ((response) => {
                 setAllPme (response.data)
+                console.log(response.data);
+                
             })
         } catch (error) {
             console.error (error)
@@ -20,7 +22,7 @@ const AllCategories = () => {
     return (
         <section className="grid sm:grid-cols-4 ~p-14/16 gap-14 mt-2 ">
             {
-                allPme.map (pme => <CardPme key={pme.idPme} idPme={pme.idPme} image={pme.logoType} name={pme.nom} services={pme.communicationMode} /> )
+                allPme.map (pme => <CardPme key={pme.idPme} idPme={pme.idPme} profile={pme.profile} name={pme.nom} services={pme.communicationMode} /> )
             }
         </section> 
     );
