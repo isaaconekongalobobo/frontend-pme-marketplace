@@ -30,8 +30,8 @@ const Categories = () => {
     return (
         <div className="grid grid-cols-3 sm:grid-cols-6 gap-2 text-sm mt-5 font-medium text-center sm:text-start " >
             {
-                tbCategories.map ((categorie) => (
-                    <ItemCategorie categorie={categorie}/>
+                tbCategories.map ((categorie, index) => (
+                    <ItemCategorie key={index} categorie={categorie}/>
                 ))
             }
         </div>
