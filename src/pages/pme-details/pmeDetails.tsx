@@ -12,12 +12,12 @@ const PmeDetails = () => {
     const {id} = useParams ()
 
     const [pme, setPme] = useState<PmeType> ()
+    const profile =  pme?.profile
 
     useEffect (() => {
         try {
             axios.get (`http://localhost:3333/get-pme/${id}`)
             .then ((response) => {
-                console.log(response.data);
                 setPme (response.data)
             })
         } catch (error) {
@@ -30,7 +30,7 @@ const PmeDetails = () => {
         <div>
             <Header/>
                 <div className="relative">
-                    <div className={`bg-[url('${pme?.profile}')] bg-cover bg-center w-full ~h-40/64 p-8 `}>
+                    <div className="bg-cover bg-center w-full ~h-40/64 p-8" style={{ backgroundImage: `url(${profile})` }}>
                         <ProfileImage src={pme?.cover} />
                     </div>
                 </div>
