@@ -34,8 +34,8 @@ const PmeDetails = () => {
         <div>
             <Header/>
                 <div className="relative">
-                    <div className="bg-cover bg-center w-full ~h-40/64 p-8" style={{ backgroundImage: `url(${pme?.profile})` }}>
-                    <div className="relative top-16 sm:top-32 left-[-14px] sm:left-4 flex flex-col sm:flex-row sm:items-center gap-5">
+                    <div className="bg-cover bg-center w-full ~h-32/64 pl-4 pr-4 sm:p-8" style={{ backgroundImage: `url(${pme?.profile})` }}>
+                    <div className="relative top-24 sm:top-32 sm:left-4 flex flex-row sm:items-center  gap-2 sm:gap-5">
                         <ProfileImage src={pme?.cover} />
                         <Infos pme={pme} showOrHiddeServices={showOrHiddeServices} />
                     </div>

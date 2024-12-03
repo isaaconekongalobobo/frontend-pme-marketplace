@@ -6,7 +6,7 @@ const BtnServices = ({showOrHiddeServices}:{showOrHiddeServices: () => void}) =>
             className="flex items-center p-2 text-sm font-normal gap-2 rounded-full bg-main-yellow"
             onClick={showOrHiddeServices}
         >
-            <span>Voir tout les services</span>
+            <span className="hidden sm:block">Voir tout les services</span>
             <LuListPlus className="text-xl"/>
         </button>
     );
