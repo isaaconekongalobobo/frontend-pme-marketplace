@@ -12,8 +12,6 @@ const AllCategories = () => {
             axios.get ('http://localhost:3333/get-all-pmes')
             .then ((response) => {
                 setAllPme (response.data)
-                console.log(response.data);
-                
             })
         } catch (error) {
             console.error (error)

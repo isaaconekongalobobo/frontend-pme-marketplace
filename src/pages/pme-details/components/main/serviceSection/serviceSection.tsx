@@ -28,14 +28,13 @@ const ServiceSection = ({name, idPme}:infos) => {
     useEffect (() => {
         setLoading (true)
         console.clear()
-
         axios.get (request)
-        .then ((res) => {
-            setServices (res.data)
-            console.log (res.data)
+        .then ((result) => {
+            setServices (result.data)
         })
-        .catch ((error) => console.error (error))
+        .catch ((error) => console.log(error))
         .finally (() => setLoading (false))
+
     }, []);
 
     
@@ -47,7 +46,7 @@ const ServiceSection = ({name, idPme}:infos) => {
                 <p className="text-black-marroon">{`${name?.toUpperCase()} vous propose plusieurs services et produits repondant a vos besoin.`}</p>
                 <p className="text-black-marroon">Voici nos services:</p>   
                  {
-                    loading ? <BiLoader/> : <ServiceList services={services} />
+                    loading ? <BiLoader className="text-black-marroon"/> : <ServiceList services={services} />
                  }           
             </div>
 

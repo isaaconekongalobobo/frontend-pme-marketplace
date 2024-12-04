@@ -5,7 +5,7 @@ const ServiceList = ({services}:{services: ServiceType[]}) => {
         <div>
             {
                 services.map ((sv) => (
-                    <p className="text-black-marroon">{sv.name}</p>
+                    <span key={sv.idService} className="text-black-marroon">{sv.name}</span>
                 ))
             }
         </div>
