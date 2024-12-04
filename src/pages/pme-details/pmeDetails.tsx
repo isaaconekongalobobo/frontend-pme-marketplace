@@ -42,7 +42,7 @@ const PmeDetails = () => {
     return (
         <div>
             <Header/>
-                <div className="mb-[15rem]">
+                <div className="mb-[45rem]">
                     <div className="bg-cover bg-center w-full ~h-32/64 pl-4 pr-4 sm:p-8" style={{ backgroundImage: `url(${pme?.cover})` }}>
                         {/* En tete de la page */}
                         <div className="relative top-24 sm:top-32 sm:left-4 flex flex-row sm:items-center  gap-2 sm:gap-5">
