@@ -8,6 +8,7 @@ import axios from "axios"
 import ProfileImage from "./components/header/profileImage"
 import Infos from "./components/header/infos"
 import ProfileZoom from "./components/profileZoom"
+import AboutSection from "./components/main/aboutSection"
 
 const PmeDetails = () => {
     // Recuperation de l'id de la PME
@@ -41,11 +42,17 @@ const PmeDetails = () => {
             <Header/>
                 <div className="relative">
                     <div className="bg-cover bg-center w-full ~h-32/64 pl-4 pr-4 sm:p-8" style={{ backgroundImage: `url(${pme?.cover})` }}>
-                    <div className="relative top-24 sm:top-32 sm:left-4 flex flex-row sm:items-center  gap-2 sm:gap-5">
-                        <ProfileImage src={pme?.profile} showOrHiddeProfile={showOrHiddeProfile} />
-                        { showProfile && <ProfileZoom src={pme?.profile} showOrHiddeProfile={showOrHiddeProfile} /> }   
-                        <Infos pme={pme} showOrHiddeServices={showOrHiddeServices} />
-                    </div>
+                        {/* En tete de la page */}
+                        <div className="relative top-24 sm:top-32 sm:left-4 flex flex-row sm:items-center  gap-2 sm:gap-5">
+                            <ProfileImage src={pme?.profile} showOrHiddeProfile={showOrHiddeProfile} />
+                            { showProfile && <ProfileZoom src={pme?.profile} showOrHiddeProfile={showOrHiddeProfile} /> }   
+                            <Infos pme={pme} showOrHiddeServices={showOrHiddeServices} />
+                        </div>
+
+                        {/* Corps de la page */}
+                        <main className="relative top-[8rem] sm:top-[12rem] p-2 flex flex-col sm:pl-64 sm:pr-64">
+                            <AboutSection description={pme?.description} />
+                        </main>
                         
                     </div>
                 </div>
