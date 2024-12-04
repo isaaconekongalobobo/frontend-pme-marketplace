@@ -2,10 +2,13 @@ import { ServiceType } from "./serviceSection";
 
 const ServiceList = ({services}:{services: ServiceType[]}) => {
     return (
-        <div>
+        <div className="flex flex-wrap gap-2">
             {
                 services.map ((sv) => (
-                    <span key={sv.idService} className="text-black-marroon">{sv.name}</span>
+                    <p 
+                    key={sv.idService} 
+                    className="text-black-marroon bg-main-yellow pl-2 pr-2 p-2 rounded-full text-center text-sm"
+                    >  {sv.name}</p>
                 ))
             }
         </div>
