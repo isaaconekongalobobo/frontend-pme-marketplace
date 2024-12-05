@@ -4,7 +4,7 @@ import SectionTitle from "../../sectionTitle";
 import axios from "axios";
 import ServiceList from "./serviceList";
 import Loader from "../../../../../components/loader";
-import Images from "./images";
+import ServiceImages from "./serviceImages";
 interface infos {
     name: string | undefined,
     idPme: number | undefined
@@ -48,14 +48,9 @@ const ServiceSection = ({name, idPme}:infos) => {
                     <p className="text-black-marroon">Voici nos services:</p>    
                 </div>
                    
-                 {
-                    loading ? <Loader/>: <ServiceList services={services} />
-                 }           
+                 { loading ? <Loader/>: <ServiceList services={services} /> }           
             </div>
-
-            {/* Image des services */}
-            <Images services={services}/>
-
+            <ServiceImages services={services} />
         </section>
     );
 }
