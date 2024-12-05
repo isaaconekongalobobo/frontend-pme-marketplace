@@ -4,6 +4,7 @@ import SectionTitle from "../../sectionTitle";
 import axios from "axios";
 import ServiceList from "./serviceList";
 import { BiLoader } from "react-icons/bi";
+import Loader from "../../../../../components/loader";
 interface infos {
     name: string | undefined,
     idPme: number | undefined
@@ -27,7 +28,6 @@ const ServiceSection = ({name, idPme}:infos) => {
 
     useEffect (() => {
         setLoading (true)
-        console.clear()
         axios.get (request)
         .then ((result) => {
             setServices (result.data)
@@ -49,7 +49,7 @@ const ServiceSection = ({name, idPme}:infos) => {
                 </div>
                    
                  {
-                    loading ? <BiLoader className="text-black-marroon"/> : <ServiceList services={services} />
+                    loading ? <Loader/>: <ServiceList services={services} />
                  }           
             </div>
 
