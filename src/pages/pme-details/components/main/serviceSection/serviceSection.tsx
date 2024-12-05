@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import SectionTitle from "../../sectionTitle";
 import axios from "axios";
 import ServiceList from "./serviceList";
-import { BiLoader } from "react-icons/bi";
 import Loader from "../../../../../components/loader";
+import Images from "./images";
 interface infos {
     name: string | undefined,
     idPme: number | undefined
@@ -52,6 +52,9 @@ const ServiceSection = ({name, idPme}:infos) => {
                     loading ? <Loader/>: <ServiceList services={services} />
                  }           
             </div>
+
+            {/* Image des services */}
+            <Images services={services}/>
 
         </section>
     );
