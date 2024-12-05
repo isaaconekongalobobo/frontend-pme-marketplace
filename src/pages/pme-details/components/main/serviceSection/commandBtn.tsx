@@ -11,7 +11,7 @@ const pVariant = {
 }
 const CommandBtn = () => {
     return <motion.p 
-            className="text-center text-xl font-medium bg-breaked-white
+            className="text-center text-sm sm:text-xl font-medium bg-breaked-white
              text-black-marroon p-2 rounded-full"
             variants={pVariant} initial="initial" animate="animate"
             >
