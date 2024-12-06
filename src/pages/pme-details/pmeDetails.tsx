@@ -39,7 +39,7 @@ const PmeDetails = () => {
             console.error(error);
         }
     }, [])
-
+    
     return (
         <div className="">
             <Header/>
@@ -56,7 +56,8 @@ const PmeDetails = () => {
                         <main className="relative top-[8rem] sm:top-[12rem] p-2 flex flex-col sm:pl-64 sm:pr-64 gap-8">
                             <AboutSection description={pme?.description} />
                             <ServiceSection name={pme?.nom} idPme={idPme}/>
-                            <ContactSection name={pme?.nom} />
+                            <ContactSection name={pme?.nom} communicationMode={pme?.communicationMode} address={pme?.address} 
+                            email={pme?.email} phone="+243893546290" />
                         </main>
                         
                     </div>
