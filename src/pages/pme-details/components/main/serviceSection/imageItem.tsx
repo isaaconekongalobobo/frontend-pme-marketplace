@@ -16,7 +16,7 @@ const ImageItem = ({idService, image}:{idService: number, image: string}) => {
         <>
             <Link to={`/details/services/${idService}`}>
                 <motion.div 
-                className="size-40 sm:size-72 bg-blue-600 rounded-xl bg-cover hover:opacity-5 
+                className="~size-40/72 bg-blue-600 rounded-xl bg-cover hover:opacity-5 
                 flex items-center justify-center " 
                 style={{ backgroundImage: `url(${image})` }}
                 variants={imageVariant} initial="initial" animate="animate" 

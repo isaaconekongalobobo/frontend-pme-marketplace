@@ -12,7 +12,7 @@ const DivVariant = {
 
 const ServiceImages = ({services}:{services: ServiceType[]}) => {
     return (
-    <motion.div className=" grid grid-cols-2 sm:flex sm:flex-wrap gap-4 mt-5" 
+    <motion.div className=" grid grid-cols-2  sm:grid-cols-3 ~gap-2/20 ~mt-4/8" 
     variants={DivVariant} initial="initial" animate="animate" >
         {
             services.map ((sv) => <ImageItem idService={sv.idService} image={sv.image}/> )
