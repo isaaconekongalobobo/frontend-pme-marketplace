@@ -11,6 +11,7 @@ import ProfileZoom from "./components/profileZoom"
 import AboutSection from "./components/main/aboutSection"
 import ServiceSection from "./components/main/serviceSection/serviceSection"
 import ContactSection from "./components/main/contactSection/contactSection"
+import SuggestSection from "./components/main/suggestSection/suggestSection"
 
 const PmeDetails = () => {
     // Recuperation de l'id de la PME
@@ -58,6 +59,7 @@ const PmeDetails = () => {
                             <ServiceSection name={pme?.nom} idPme={idPme}/>
                             <ContactSection name={pme?.nom} communicationMode={pme?.communicationMode} address={pme?.address} 
                             email={pme?.email} phone="+243893546290" />
+                            <SuggestSection idPme={idPme} />
                         </main>
                         
                     </div>
