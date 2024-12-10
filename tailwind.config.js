@@ -26,6 +26,7 @@ export default {
       'gray': '#D9D9D9',
       'transparant': 'transparent',
       'baige': '#DCCEB2',
+      'red': '#FF0800'
     }
   },
   plugins: [

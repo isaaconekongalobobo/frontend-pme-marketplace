@@ -3,6 +3,7 @@ import Input from './components/input';
 import Header from './components/header';
 import BtnSubmition from './components/btnSubmition';
 import { Link } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
 
 const formVariant = {
     initial : {
@@ -17,16 +18,28 @@ const formVariant = {
         }
     }
 }
+
+// Champs de formulaire
+interface FormType {
+    email: string,
+    password: string
+}
 const Connexion = () => {
+    const {register, handleSubmit,formState: {errors}} = useForm<FormType> ()
+    const onSubmit = (data: FormType) => {
+        console.log(data);
+    }
     return (
         <main className='flex justify-center items-center p-8 w-screen bg-breaked-white h-screen'>
-            <motion.form className='bg-white p-9 pl-8 pr-8 shadow-lg rounded-2xl flex flex-col gap-5' variants={formVariant} initial="initial" animate="animate" >
+            <motion.form 
+                onSubmit={handleSubmit (onSubmit)}
+                className='bg-white p-9 pl-8 pr-8 shadow-lg rounded-2xl flex flex-col gap-5' variants={formVariant} initial="initial" animate="animate" >
                 {/* En tete */}
                 <Header title='Connectez-vous a votre compte' />
 
                 <div className='flex flex-col gap-2'>
-                    <Input type='text' name='email' placeholder='E-mail'/>
-                    <Input type='text' name='password' placeholder='Mot de passe'/>                    
+                    <Input type='text' name='email' placeholder='E-mail' register={register} errors={errors} />
+                    <Input type='text' name='password' placeholder='Mot de passe' register={register} errors={errors} />                    
                 </div>
 
                 <div className='flex flex-col gap-2 items-center' >

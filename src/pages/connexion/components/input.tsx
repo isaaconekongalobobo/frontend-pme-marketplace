@@ -1,8 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {motion} from 'framer-motion'
 interface inputType {
     type: string,
     name: string,
-    placeholder: string
+    placeholder: string,
+    register: any,
+    errors: any
 }
 
 const inputVariant = {
@@ -23,12 +26,16 @@ const inputVariant = {
         y: -5
     }
 }
-const Input = ({type, name, placeholder}:inputType) => {
+const Input = ({type, name, placeholder,  register, errors }:inputType) => {
+    const errorMessage = `Le champs ${name} est requis`
     return (
-        <motion.input type={type} name={name} placeholder={placeholder} 
+        <motion.input 
+        type={type} 
+        {...register (name, {required: errorMessage})}
+        placeholder={placeholder} 
         variants={inputVariant} initial="initial" animate="animate" whileHover="hover"
-        className="p-2 rounded-full bg-transparant border-4 border-black-marroon 
-        placeholder:text-black-marroon placeholder:text-sm text-black-marroon pl-4"
+        className={`p-2 rounded-full bg-transparant border-4  ${errors[name]? 'border-red' : 'border-black-marroon'}   
+        placeholder:text-black-marroon placeholder:text-sm text-black-marroon pl-4`}
         />
     );
 }
