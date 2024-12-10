@@ -50,11 +50,13 @@ interface Step1type {
     email: string,
 }
 
-console.clear()
 
 const Step1 = () => {
     const {handleSubmit, register, formState: {errors}} = useForm<Step1type> ()
-    const onSubmit = (data: Step1type) => {console.log (data)}
+    const onSubmit = (data: Step1type) => {
+        console.clear()
+        console.log (data)
+    }
     return (
         <main className='flex justify-center items-center p-8 w-screen bg-breaked-white h-screen'>
             <form 
