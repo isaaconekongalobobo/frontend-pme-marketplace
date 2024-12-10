@@ -4,6 +4,9 @@ import ConnexionLink from "../components/connexionLink";
 import Input from "../components/input";
 import {motion} from 'framer-motion'
 import { useForm } from "react-hook-form";
+import axios from "axios";
+
+const {log, clear} = console
 
 const fieldsetVariant = {
     initial: {
@@ -54,8 +57,14 @@ interface Step1type {
 const Step1 = () => {
     const {handleSubmit, register, formState: {errors}} = useForm<Step1type> ()
     const onSubmit = (data: Step1type) => {
-        console.clear()
-        console.log (data)
+        clear()
+        const {name, email} = data
+        try {
+            axios.post (import.meta.env.VITE_ENDPOINT_SIGN_IN_PME_S1, {name, email})
+            .then ((res) => log (res.data))
+        } catch (error) {
+            log(error);
+        }
     }
     return (
         <main className='flex justify-center items-center p-8 w-screen bg-breaked-white h-screen'>
@@ -67,7 +76,7 @@ const Step1 = () => {
                     <Header title="Créez un compte"/>
 
                     <motion.fieldset className="flex flex-col gap-3" variants={fieldsetVariant} initial="initial" animate="animate"  >
-                        <Input type="text" register={register} errors={errors} name="entrepiseName" placeholder="Nom de l'entreprise"/>
+                        <Input type="text" register={register} errors={errors} name="name" placeholder="Nom de l'entreprise"/>
                         <Input type="email" register={register} errors={errors} name="email" placeholder="E-mail"/>
                     </motion.fieldset>
 
