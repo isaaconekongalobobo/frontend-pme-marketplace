@@ -29,8 +29,14 @@ const Connexion = () => {
     const {register, handleSubmit,formState: {errors}} = useForm<FormType> ()
     const onSubmit = (data: FormType) => {
         const {email, password} = data
-        axios.post (import.meta.env.VITE_ENDPOINT_LOGIN_PME, {email, password})
-        .then ((res) => console.log (res.data))
+        try {
+            console.clear()
+            axios.post (import.meta.env.VITE_ENDPOINT_LOGIN_PME, {email, password})
+            .then ((res) => console.log (res.data))            
+        } catch (error) {
+            console.log (error)
+        }
+
     }
     return (
         <main className='flex justify-center items-center p-8 w-screen bg-breaked-white h-screen'>
