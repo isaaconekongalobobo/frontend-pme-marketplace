@@ -5,6 +5,8 @@ import Input from "../components/input";
 import {motion} from 'framer-motion'
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import { useState } from "react";
+import { Loader } from "../components/loader";
 
 const {log, clear} = console
 
@@ -56,12 +58,16 @@ interface Step1type {
 
 const Step1 = () => {
     const {handleSubmit, register, formState: {errors}} = useForm<Step1type> ()
+    const [loader, setLoader] = useState (false)
+    const test = true
     const onSubmit = (data: Step1type) => {
         clear()
         const {name, email} = data
         try {
+            setLoader (true)
             axios.post (import.meta.env.VITE_ENDPOINT_SIGN_IN_PME_S1, {name, email})
             .then ((res) => log (res.data))
+            .finally (() => setLoader (false))
         } catch (error) {
             log(error);
         }
@@ -74,7 +80,7 @@ const Step1 = () => {
                 <motion.img src="/img-step-1.jpg" className="~w-40/60" variants={imgVariant} initial="initial" animate="animate" />
                 <div className="flex flex-col gap-5 ">
                     <Header title="Créez un compte"/>
-
+                    {  test && <Loader/>}
                     <motion.fieldset className="flex flex-col gap-3" variants={fieldsetVariant} initial="initial" animate="animate"  >
                         <Input type="text" register={register} errors={errors} name="name" placeholder="Nom de l'entreprise"/>
                         <Input type="email" register={register} errors={errors} name="email" placeholder="E-mail"/>
