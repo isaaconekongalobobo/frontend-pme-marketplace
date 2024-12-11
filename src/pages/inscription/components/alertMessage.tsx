@@ -1,4 +1,5 @@
 import {AnimatePresence, motion} from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 const spanVariant = {
     initial: {
         opacity: 0,
@@ -20,6 +21,7 @@ const spanVariant = {
     },
 }
 const AlertMessage = ({message}:{message: string}) => {
+    const navigate = useNavigate ()
     return (
         <AnimatePresence>
             <motion.span variants={spanVariant} initial="initial" animate="animate" exit="exit"
@@ -27,7 +29,7 @@ const AlertMessage = ({message}:{message: string}) => {
             >
                 <p className='text-center'> {message} </p>
                 <div className='flex gap-2'>
-                    <button className='bg-main-yellow'>Se connecter</button>
+                    <button className='bg-main-yellow' onClick={() => navigate ('/connexion')} >Se connecter</button>
                     <button className='bg-black-marroon text-main-yellow'>Changer de compte</button>
                 </div>
             </motion.span>            
