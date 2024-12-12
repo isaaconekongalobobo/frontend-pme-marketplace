@@ -75,7 +75,7 @@ const Step1 = () => {
     }
     return (
         <main className='flex justify-center items-center p-8 w-screen bg-breaked-white h-screen'>
-            {  exist && <AlertMessage message="Cet addresse e-mail existe déja"/> }
+            {  exist && <AlertMessage message="Cet addresse e-mail existe déja" setExist={setExist}/> }
             <form 
                 onSubmit={handleSubmit(onSubmit)}
                 className='bg-white p-9 pl-8 pr-8 shadow-lg rounded-2xl flex flex-col sm:flex-row gap-5 items-center ' >

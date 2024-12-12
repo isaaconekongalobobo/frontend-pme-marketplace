@@ -1,4 +1,5 @@
 import {AnimatePresence, motion} from 'framer-motion'
+import { Dispatch, SetStateAction } from 'react'
 import { useNavigate } from 'react-router-dom'
 const spanVariant = {
     initial: {
@@ -20,17 +21,17 @@ const spanVariant = {
         },
     },
 }
-const AlertMessage = ({message}:{message: string}) => {
+const AlertMessage = ({message, setExist}:{message: string, setExist: Dispatch<SetStateAction<boolean>>}) => {
     const navigate = useNavigate ()
     return (
         <AnimatePresence>
             <motion.span variants={spanVariant} initial="initial" animate="animate" exit="exit"
             className='absolute z-10 bg-white p-10 rounded-lg shadow-lg flex flex-col gap-8'
             >
-                <p className='text-center'> {message} </p>
+                <p className='text-center text-black-marroon'> {message} </p>
                 <div className='flex gap-2'>
                     <button className='bg-main-yellow' onClick={() => navigate ('/connexion')} >Se connecter</button>
-                    <button className='bg-black-marroon text-main-yellow'>Changer de compte</button>
+                    <button className='bg-black-marroon text-main-yellow'  onClick={() => setExist (false)} >Changer de compte</button>
                 </div>
             </motion.span>            
         </AnimatePresence>
