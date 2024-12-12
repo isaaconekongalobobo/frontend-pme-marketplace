@@ -49,7 +49,7 @@ const routes = createBrowserRouter ([
     children: [
       { path: 'inscription-step-1', element: <Step1/> },
       { path: 'inscription-step-2', element: <Step2/> },
-      {path: 'inscription-step-2', element: <Step3/>}
+      {path: 'inscription-step-3', element: <Step3/>}
     ]
   }
 ]) 

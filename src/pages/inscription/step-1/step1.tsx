@@ -8,6 +8,7 @@ import axios from "axios";
 import { useState } from "react";
 import { Loader } from "../components/loader";
 import AlertMessage from "../components/alertMessage";
+import { useNavigate } from "react-router-dom";
 
 const {log, clear} = console
 
@@ -58,6 +59,7 @@ interface Step1type {
 
 
 const Step1 = () => {
+    const navigate = useNavigate ()
     const {handleSubmit, register, formState: {errors}} = useForm<Step1type> ()
     const [loader, setLoader] = useState (false)
     const [exist, setExist] = useState (false)
@@ -67,7 +69,12 @@ const Step1 = () => {
         try {
             setLoader (true)
             axios.post (import.meta.env.VITE_ENDPOINT_SIGN_IN_PME_S1, {name, email})
-            .then ((res) => setExist (res.data))
+            .then ((res) => {
+                if (res.data === false) {
+                    navigate ('/inscription/inscription-step-2')
+                }
+                setExist (res.data)
+            })
             .finally (() => setLoader (false))
         } catch (error) {
             log(error);
