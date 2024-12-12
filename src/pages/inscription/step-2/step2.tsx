@@ -48,19 +48,11 @@ interface Step1type {
 
 const Step2 = () => {
     // const navigate = useNavigate ()
-    const {handleSubmit, register, formState: {errors}} = useForm<Step1type> ()
+    const {handleSubmit, register,control, formState: {errors}} = useForm<Step1type> ()
     const [loader, setLoader] = useState (false)
     const onSubmit = (data: Step1type) => {
         clear()
-        const {name, email} = data
-        try {
-            setLoader (true)
-            axios.post (import.meta.env.VITE_ENDPOINT_SIGN_IN_PME_S1, {name, email})
-            .then ((res) => log (res.data))
-            .finally (() => setLoader (false))
-        } catch (error) {
-            log(error);
-        }
+        log (data)
     }
     return (
         <main className='flex justify-center items-center p-8 w-screen bg-breaked-white h-screen'>
@@ -71,12 +63,12 @@ const Step2 = () => {
                     <Header title="Créez un compte"/>
                     {  loader && <Loader/>}
                     <motion.fieldset className="flex flex-col gap-3" variants={fieldsetVariant} initial="initial" animate="animate"  >
-                        <InputPhoneNumber name="phone" register={register} errors={errors} /> 
+                        <InputPhoneNumber name="phone" register={register} errors={errors} control={control} /> 
                         <Input type="email" register={register} errors={errors} name="email" placeholder="E-mail"/>
                     </motion.fieldset>
 
                     <motion.div className="flex flex-col items-center gap-2" variants={btnDivVariant} initial="initial" animate="animate" >
-                        <BtnSubmition text="Suivant" />
+                        <BtnSubmition text="Terminer" />
                         <ConnexionLink/>
                     </motion.div>
                 </div>
