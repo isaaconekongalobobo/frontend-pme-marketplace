@@ -40,7 +40,7 @@ const InputPhoneNumber = ({ name, errors, control}: InputType) => {
         <Controller name={name} control={control} defaultValue=""
             render={({field: {onChange, value}}) => (
                 <PhoneInput country={'cd'} value={value} onChange={onChange} 
-                    inputClass='text-black bg-red' placeholder='Telephone'
+                    inputClass='text-black rounded-sm ' placeholder='Telephone'
                     dropdownClass="bg-white border-2  border-black-marroon rounded-2xl text-black-marroon"
                 />            
             )}

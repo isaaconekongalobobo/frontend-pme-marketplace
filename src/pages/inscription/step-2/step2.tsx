@@ -8,6 +8,7 @@ import axios from "axios";
 import { useState } from "react";
 import { Loader } from "../components/loader";
 import InputPhoneNumber from "../components/inputPhoneNumber";
+import InputPassword from "../components/inputPassword";
 // import { useNavigate } from "react-router-dom";
 
 const {log, clear} = console
@@ -64,7 +65,7 @@ const Step2 = () => {
                     {  loader && <Loader/>}
                     <motion.fieldset className="flex flex-col gap-3" variants={fieldsetVariant} initial="initial" animate="animate"  >
                         <InputPhoneNumber name="phone" register={register} errors={errors} control={control} /> 
-                        <Input type="email" register={register} errors={errors} name="email" placeholder="E-mail"/>
+                        <InputPassword name="password" register={register} errors={errors} />
                     </motion.fieldset>
 
                     <motion.div className="flex flex-col items-center gap-2" variants={btnDivVariant} initial="initial" animate="animate" >
