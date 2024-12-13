@@ -9,6 +9,7 @@ import { useState } from "react";
 import { Loader } from "../components/loader";
 import InputPhoneNumber from "../components/inputPhoneNumber";
 import InputPassword from "../components/inputPassword";
+import { useNavigate } from "react-router-dom";
 // import { useNavigate } from "react-router-dom";
 
 const {log, clear} = console
@@ -50,10 +51,25 @@ interface Step1type {
 const Step2 = () => {
     // const navigate = useNavigate ()
     const {handleSubmit, register,control, formState: {errors}} = useForm<Step1type> ()
+    const navigate = useNavigate ()
     const [loader, setLoader] = useState (false)
     const onSubmit = (data: Step1type) => {
         clear()
-        log (data)
+        const {phoneNumber, password} = data
+        setLoader (true)
+        try {
+            axios.post (import.meta.env.VITE_ENDPOINT_SIGN_IN_PME_S2, {phoneNumber, password})
+            .then ((res) => {
+                if (!res.data.error) {
+                    navigate ('/inscription/inscription-step-3') 
+                } else {
+                    alert (res.data.message)
+                }
+            }).finally (() => setLoader (false))            
+        } catch (error) {
+            console.log(error);
+        }
+
     }
     return (
         <main className='flex justify-center items-center p-8 w-screen bg-breaked-white h-screen'>
@@ -64,7 +80,7 @@ const Step2 = () => {
                     <Header title="Créez un compte"/>
                     {  loader && <Loader/>}
                     <motion.fieldset className="flex flex-col gap-3" variants={fieldsetVariant} initial="initial" animate="animate"  >
-                        <InputPhoneNumber name="phone" register={register} errors={errors} control={control} /> 
+                        <InputPhoneNumber name="phoneNumber" register={register} errors={errors} control={control} /> 
                         <InputPassword name="password" register={register} errors={errors} />
                     </motion.fieldset>
 
