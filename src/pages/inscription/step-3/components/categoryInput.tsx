@@ -33,7 +33,6 @@ interface categoryType {
     description: string
 }
 const CategoryInput = ({register, errors }:inputType) => {
-    const errorMessage = `Le champs ${name} est requis`
     const [categories, setCategories] = useState<categoryType[]> ()
     useEffect (() => {
         try {
