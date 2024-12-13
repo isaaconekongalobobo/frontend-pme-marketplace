@@ -21,7 +21,7 @@ const BtnSubmition = ({text}:{text: string}) => {
     const show = () => setIcon (true)
     const hidde = () => setIcon (false)
     return (
-        <motion.button whileHover={{y: -2}} type="submit" className="rounded-full w-3/4 flex items-center justify-center"
+        <motion.button whileHover={{y: -2}} type="submit" className="rounded-full w-3/4 flex items-center justify-center bg-black-marroon text-white"
          onMouseOver={show} onMouseLeave={hidde}>{text}
             <motion.span variants={iconVariant} initial="initial" whileInView="animate" className={icon? "block" : "hidden"}>
                 <BiArrowFromLeft className="relative left-3 text-2xl"/>

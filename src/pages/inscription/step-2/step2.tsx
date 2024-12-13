@@ -95,7 +95,7 @@ const Step2 = () => {
                     </motion.fieldset>
 
                     <motion.div className="flex flex-col items-center gap-2" variants={btnDivVariant} initial="initial" animate="animate" >
-                        <BtnSubmition text="Terminer" />
+                        <BtnSubmition text="Suivant" />
                         <ConnexionLink/>
                     </motion.div>
                 </div>
