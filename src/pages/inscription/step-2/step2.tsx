@@ -1,7 +1,6 @@
 import Header from "../components/header";
 import BtnSubmition from "../components/btnSubmition";
 import ConnexionLink from "../components/connexionLink";
-import Input from "../components/input";
 import {motion} from 'framer-motion'
 import { useForm } from "react-hook-form";
 import axios from "axios";
@@ -10,6 +9,7 @@ import { Loader } from "../components/loader";
 import InputPhoneNumber from "../components/inputPhoneNumber";
 import InputPassword from "../components/inputPassword";
 import { useNavigate } from "react-router-dom";
+import { passwordRegex, phoneRegex } from "../../../utils/regex";
 // import { useNavigate } from "react-router-dom";
 
 const {log, clear} = console
@@ -43,8 +43,8 @@ const btnDivVariant = {
 }
 
 interface Step1type {
-    name: string,
-    email: string,
+    phoneNumber: string,
+    password: string,
 }
 
 
@@ -56,19 +56,29 @@ const Step2 = () => {
     const onSubmit = (data: Step1type) => {
         clear()
         const {phoneNumber, password} = data
-        setLoader (true)
-        try {
-            axios.post (import.meta.env.VITE_ENDPOINT_SIGN_IN_PME_S2, {phoneNumber, password})
-            .then ((res) => {
-                if (!res.data.error) {
-                    navigate ('/inscription/inscription-step-3') 
-                } else {
-                    alert (res.data.message)
-                }
-            }).finally (() => setLoader (false))            
-        } catch (error) {
-            console.log(error);
+        log (data)
+        if (phoneRegex.test (phoneNumber) === false) {
+            alert ('Numero invalide')
+        } else if (passwordRegex.test (password) === false) {
+            const errorMessage = "Le mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule, un chiffre et un caractère spécial (@$!%*?&)"
+            alert (errorMessage)
+        } else {
+            setLoader (true)
+            try {
+                axios.post (import.meta.env.VITE_ENDPOINT_SIGN_IN_PME_S2, {phoneNumber, password})
+                .then ((res) => {
+                    if (!res.data.error) {
+                        navigate ('/inscription/inscription-step-3') 
+                    } else {
+                        alert (res.data.message)
+                    }
+                }).finally (() => setLoader (false))            
+            } catch (error) {
+                log ('erreur')
+                console.log(error);
+            }            
         }
+
 
     }
     return (

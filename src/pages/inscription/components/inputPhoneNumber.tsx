@@ -37,7 +37,7 @@ const InputPhoneNumber = ({ name, errors, control}: InputType) => {
 
   return (
     <motion.div variants={inputVariant} initial="initial" animate="animate" whileHover="hover">
-        <Controller name={name} control={control} defaultValue=""
+        <Controller name={name} control={control}
             render={({field: {onChange, value}}) => (
                 <PhoneInput country={'cd'} value={value} onChange={onChange} 
                     inputClass='text-black rounded-sm ' placeholder='Telephone'
