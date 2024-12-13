@@ -10,6 +10,8 @@ import InputPhoneNumber from "../components/inputPhoneNumber";
 import InputPassword from "../components/inputPassword";
 import { useNavigate } from "react-router-dom";
 import { passwordRegex, phoneRegex } from "../../../utils/regex";
+import Input from "../components/input";
+import CategoryInput from "./components/categoryInput";
 // import { useNavigate } from "react-router-dom";
 
 const {log, clear} = console
@@ -36,9 +38,7 @@ const btnDivVariant = {
     animate: {
         opacity: 1,
         left: 0,
-        transition: {
-            delay: 1
-        }
+
     }
 }
 
@@ -89,10 +89,15 @@ const Step3 = () => {
                 <div className="flex flex-col gap-5 ">
                     <Header title="Ajoutez les informations suplementaire de votre entreprise"/>
                     {  loader && <Loader/>}
-                    <motion.fieldset className="flex flex-col gap-3" variants={fieldsetVariant} initial="initial" animate="animate"  >
-                        <InputPhoneNumber name="phoneNumber" register={register} errors={errors} control={control} /> 
-                        <InputPassword name="password" register={register} errors={errors} />
-                    </motion.fieldset>
+                    <motion.div className="flex flex-col gap-3" variants={fieldsetVariant} initial="initial" animate="animate"  >
+                        <fieldset className="justify-between">
+                            <Input type="text" name="address" register={register} errors={errors} placeholder="Addresse"/>
+                            <Input type="text" name="licence" register={register} errors={errors} placeholder="licence"/>
+                        </fieldset>
+                        <fieldset>
+                            <CategoryInput register={register} errors={errors}/>
+                        </fieldset>
+                    </motion.div>
 
                     <motion.div className="flex flex-col items-center gap-2" variants={btnDivVariant} initial="initial" animate="animate" >
                         <BtnSubmition text="Suivant" />

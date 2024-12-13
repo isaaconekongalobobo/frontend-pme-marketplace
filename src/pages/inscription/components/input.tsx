@@ -19,7 +19,7 @@ const inputVariant = {
         y: 0,
         opacity: 1,
         transition: {
-            delay: 2
+            delay: 1
         },
     },
     hover: {
@@ -35,7 +35,7 @@ const Input = ({type, name, placeholder,  register, errors }:inputType) => {
         placeholder={placeholder} 
         variants={inputVariant} initial="initial" animate="animate" whileHover="hover"
         className={`p-2 rounded-full bg-transparant border-4  ${errors[name]? 'border-red' : 'border-black-marroon'}   
-        placeholder:text-black-marroon placeholder:text-sm text-black-marroon pl-4`}
+        placeholder:text-black-marroon placeholder:text-sm text-black-marroon pl-4 w-full`}
         />
     );
 }
