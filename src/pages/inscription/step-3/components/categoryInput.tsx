@@ -39,7 +39,7 @@ const CategoryInput = ({register, errors }:inputType) => {
             axios.get (import.meta.env.VITE_ENDPOINT_GET_CATEGORIES)
             .then ((res) => setCategories (res.data))
         } catch (error) {
-            
+            console.log(error);
         }
     })
     return (

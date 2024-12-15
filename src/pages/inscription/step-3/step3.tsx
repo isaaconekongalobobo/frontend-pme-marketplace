@@ -5,8 +5,7 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { useState } from "react";
 import { Loader } from "../components/loader";
-import { useNavigate } from "react-router-dom";
-import { passwordRegex, phoneRegex } from "../../../utils/regex";
+// import { useNavigate } from "react-router-dom";
 import Input from "../components/input";
 import CategoryInput from "./components/categoryInput";
 import ImageInput from "./components/imageInput";
@@ -44,19 +43,35 @@ interface Step1type {
     address: string
     license: string
     category: string
-    image: File
+    profile: File[]
 }
 
 
 const Step3 = () => {
     // const navigate = useNavigate ()
     const {handleSubmit, register,formState: {errors}} = useForm<Step1type> ()
-    const navigate = useNavigate ()
     const [loader, setLoader] = useState (false)
     const onSubmit = (data: Step1type) => {
         clear()
-        const {address,license,category,image} = data
-        log (data)
+        const {address,license,category,profile} = data
+        if (profile !== null) {
+            const formData = new FormData ()
+            formData.append ("address", address)
+            formData.append ("licence", license)
+            formData.append ("category", category)
+            formData.append ("profile", profile[0])
+
+            try {
+                setLoader (true)
+                axios.post (import.meta.env.VITE_ENDPOINT_SIGN_IN_PME_S3, formData)
+                .then ((res) => {
+                    log (res.data)
+                })
+            } catch (error) {
+                log (error)
+            }
+        }
+
     }
     return (
         <main className='flex justify-center items-center p-8 w-screen bg-breaked-white h-screen'>
