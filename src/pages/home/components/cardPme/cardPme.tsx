@@ -43,7 +43,7 @@ const CardPme = ({idPme,profile, name, services} : pmeCardType) => {
                 />
                 <div className=" flex flex-col text-center ">
                     <h3 className="text-black font-medium text-xl "> {name} </h3>
-                    <p className="text-black" > { `${services![1]} +${services?.length}` } </p>
+                    {/*<p className="text-black" > { `${services![1]} +${services?.length}` } </p>*/}
                 </div>
                 <BtnCard idPme={idPme} />
             </div>

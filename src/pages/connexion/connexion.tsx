@@ -5,7 +5,7 @@ import BtnSubmition from './components/btnSubmition';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
-
+const {log, clear} = console
 const formVariant = {
     initial : {
         y: -20,
@@ -32,9 +32,17 @@ const Connexion = () => {
         try {
             console.clear()
             axios.post (import.meta.env.VITE_ENDPOINT_LOGIN_PME, {email, password})
-            .then ((res) => console.log (res.data))            
+            .then ((res) => {
+                // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+                res.status === 400 && alert('Email ou mot de passe incorrect')
+                log(res.data)
+            })
+            .catch ((err) => {
+                // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+                err.response.status === 400 && alert('Email ou mot de passe incorrect')
+            })           
         } catch (error) {
-            console.log (error)
+            log(error)
         }
 
     }
