@@ -10,14 +10,14 @@ import Step1 from "./pages/inscription/step-1/step1"
 import Step2 from "./pages/inscription/step-2/step2"
 import Step3 from "./pages/inscription/step-3/step3"
 import AllCategories from "./pages/home/components/allCategories"
-import Index from "./pages"
+// import Index from "./pages"
 
 const routes = createBrowserRouter ([
+  // {
+  //   path:'/', element: <Index/>
+  // },
   {
-    path:'/', element: <Index/>
-  },
-  {
-      path: '/home',
+      path: '/',
       element: <HomePage/>,
       children: [
         {path: 'categorie', element: <AllCategories/> },

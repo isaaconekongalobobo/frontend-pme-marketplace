@@ -1,9 +1,10 @@
-import { Outlet } from "react-router-dom"
+// import { Outlet } from "react-router-dom"
 import Header from "../../components/header/header"
 import SearchBar from "./components/searchBar"
 import SectionCategorie from "./components/sectionCategorie"
 import SubmitButton from "./components/submitButton"
 import Footer from "../../components/footer/footer"
+import AllCategories from "./components/allCategories"
 
 export interface PmeType {
     idPme: number,
@@ -33,7 +34,8 @@ const HomePage = () => {
                     <SectionCategorie/>                
                 </div>
                 <div className="relative ~top-20/28 z-10" >
-                    <Outlet/>               
+                    {/* <Outlet/>                */}
+                    <AllCategories/>
                 </div>
                 <Footer/>                 
             </div>
