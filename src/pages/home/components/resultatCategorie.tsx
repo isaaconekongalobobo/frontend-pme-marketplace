@@ -29,7 +29,7 @@ const ResultatCategorie = () => {
             </Link>
             <section className="grid sm:grid-cols-4 ~p-14/16 gap-14 mt-2">
                 {
-                    pmeByCategory.map (pme => <CardPme key={pme.idPme} idPme={pme.idPme} image={pme.logoType} name={pme.nom} services={pme.communicationMode} /> )
+                    pmeByCategory.map (pme => <CardPme key={pme.idPme} idPme={pme.idPme} profile={pme.profile} name={pme.nom} /> )
                 }
             </section>            
         </div>

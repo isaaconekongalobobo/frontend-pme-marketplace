@@ -5,7 +5,7 @@ import BtnSubmition from './components/btnSubmition';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
-const {log, clear} = console
+const { log } = console
 const formVariant = {
     initial : {
         y: -20,

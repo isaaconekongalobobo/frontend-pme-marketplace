@@ -7,7 +7,6 @@ interface pmeCardType {
     idPme: number
     profile: string | undefined,
     name: string | undefined,
-    services: string[] | undefined
 }
 
 const imageVariant = {
@@ -24,16 +23,7 @@ const imageVariant = {
     }
 }
 
-const CardPme = ({idPme,profile, name, services} : pmeCardType) => {
-    // const [pmeServices, setPmeServices] = useState ()
-    
-    // // Requette pour recuperer les services de la PME
-    // useEffect(() => {
-    //     axios.get (`http://localhost:3333/get-pme-services/${idPme}`)
-    //     .then ((res) => {
-    //         setPmeServices (res.data)
-    //     })
-    // }, []);
+const CardPme = ({idPme,profile, name } : pmeCardType) => {
     return (
         <Link to={`/pme-details/${idPme}`} >
             <div className=" flex flex-col items-center gap-2 mb-[-80px] sm:mb-[-100px]">
@@ -43,7 +33,6 @@ const CardPme = ({idPme,profile, name, services} : pmeCardType) => {
                 />
                 <div className=" flex flex-col text-center ">
                     <h3 className="text-black font-medium text-xl "> {name} </h3>
-                    {/*<p className="text-black" > { `${services![1]} +${services?.length}` } </p>*/}
                 </div>
                 <BtnCard idPme={idPme} />
             </div>

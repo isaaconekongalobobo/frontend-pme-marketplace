@@ -20,7 +20,7 @@ const AllCategories = () => {
     return (
         <section className="grid sm:grid-cols-4 ~p-14/16 gap-14 mt-2 ">
             {
-                allPme.map (pme => <CardPme key={pme.idPme} idPme={pme.idPme} profile={pme.profile} name={pme.nom} services={pme.communicationMode} /> )
+                allPme.map (pme => <CardPme key={pme.idPme} idPme={pme.idPme} profile={pme.profile} name={pme.nom} /> )
             }
         </section> 
     );
